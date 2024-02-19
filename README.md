@@ -237,11 +237,17 @@ What's Next?
 Para corroborar que la imagen se haya construído puede escribir el siguiente comando en la terminal:
 
 ```Powershell
+docker images
+```
+
+Si la imagen se construyó exitosamente debería salirte el listado de imágenes que se tienen de la siguiente manera:
+
+```Powershell
 REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
 espresso     latest    e454a46b2bb9   4 hours ago   15.2GB
 ```
 
-O revisar en el apartado de images de dockerdesktop.
+También se puede revisar en el apartado de images de docker desktop.
 
 Para correr la imagen de manera directa sin crear ningún en específico corra el siguiente comando:
 
