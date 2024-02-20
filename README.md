@@ -15,7 +15,7 @@ La imagen que se utiliza como base para construir ésta pertenece a [NVIDIA HPC 
 
 > Para más información sobre Nvidia High Performance Computing haga click [aquí](https://developer.nvidia.com/hpc-sdk)
 
-Antes de construir la imagen es necesario que tenga instalado docker en su sistema, si no tiene instalado docker puede seguir estos pasos.
+Antes de construir la imagen es necesario que tenga instalado docker en su sistema, si no tiene instalado docker puede seguir los siguientes pasos. Siga los pasos de acuerdo a su sistema operativo, la descarga e instalación es diferente en cada sistema operativo.
 
 ## Docker en Windows
 
@@ -64,11 +64,13 @@ Esto ayudará a futuras intalaciones de distribuciones linux.
 
 ## Docker en Linux
 
-Para instalar docker dentro en ubuntu puede primero depurar contenido que ya se tenga de docker mediante el siguiente comando:
+Antes de instalar docker puede depurar contenido que ya se tenga de docker mediante el siguiente comando:
 
 ```shell
 for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
 ```
+
+### 1. Descargar y actualizar repositorios APT
 
 Para instalar docker primero hay que añadir las llaves del repositorio de docker al sistema. Para ellos primero actualizaremos los repositorios de ubuntu:
 
@@ -77,7 +79,6 @@ sudo apt-get update
 ```
 
 Después descargaremos las llaves con los siguientes comandos, en orden.
-
 
 ```shell
 sudo apt-get install ca-certificates curl
@@ -110,6 +111,8 @@ Volvemos a actualizar los repositorios:
 ```shell
 sudo apt-get update
 ```
+
+### 2. Instalación
 
 Ahora pasaremos a la instalación de docker, para instalar la versión más reciente de docker con sus paquetes utilizaremos el siguiente comando:
 
@@ -148,7 +151,11 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
 
-Si te salió el mensaje de arriba quiere decir que docker se instaló correctamente; sin embargo, docker necesita permisos de super usuario para poder correrse sin el comando sudo, por lo que tendrá que crear un grupo de docker y añadirle su usuario de la siguiente manera:
+Si te salió el mensaje de arriba quiere decir que docker se instaló correctamente
+
+### 3. Permisos de super usuario 
+
+Docker necesita permisos de super usuario para poder correrse sin el comando sudo, por lo que tendrá que crear un grupo de docker y añadirle su usuario de la siguiente manera:
 
 Crea un grupo llamado docker:
 
@@ -176,6 +183,8 @@ Ahora pruebe correr el comando de docker run sin el sudo:
 docker run hello-world
 ```
 
+### 4. Docker desktop
+
 Para terminar con el apartado de ubuntu, si quiere activar docker desktop en su sistema ubuntu deberá descargar el último [DEB package](https://desktop.docker.com/linux/main/amd64/137060/docker-desktop-4.27.2-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64). Para más información revice el último link de las referencias del final del apartado de linux.
 
 Actualice los repositorios:
@@ -195,6 +204,8 @@ sudo apt-get install ./docker-desktop-4.27.2-amd64.deb
 Una vez descargado e instalado el paquete de docker desktop, vaya a la sección de aplicaciones y busque docker desktop.
 
 ![desktop](https://docs.docker.com/desktop/install/images/docker-app-in-apps.png)
+
+### Referencias
 
 > Para más información puede consultar los siguientes links: <br>https://docs.docker.com/engine/install/ubuntu/ <br>https://docs.docker.com/engine/install/linux-postinstall/ <br>https://docs.docker.com/desktop/install/linux-install/
 
