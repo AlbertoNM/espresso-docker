@@ -211,7 +211,17 @@ Una vez descargado e instalado el paquete de docker desktop, vaya a la sección 
 
 ## Construcción de la imagen
 
-El archivo Dockerfile contiene los pasos de construcción de la imagen de Quantum Espresso; para empezar a construir la imagen se necesita abrir una terminal que esté dentro de la carpeta de este proyecto. Si se encuentra en VS code puede abrir una terminal en esta misma carpeta con el comando `ctrl + ñ` o en la parte superior hay una pestaña llamada terminal.
+Si se encuentra en un sistema operativo windows, antes de construir la imagen, o de correr cualquier comando de docker, debe de tener abierta la aplicación de docker desktop.
+
+El archivo Dockerfile contiene los pasos de construcción de la imagen de Quantum Espresso; para empezar a construir la imagen se necesita abrir una terminal que esté dentro de la carpeta de este proyecto. 
+
+```Powershell
+PS C:\Users\pc07d\Documents\workspace\espresso-docker>
+```
+
+> Verificar que la ruta de la terminal se encuentre dentro de la carpeta del proyecto como se muestra arriba. 
+
+Si se encuentra en VS code puede abrir una terminal en esta misma carpeta con el comando `ctrl + ñ` o en la parte superior hay una pestaña llamada terminal.
 
 Tecleé el siguiente comando en la terminal:
 
@@ -220,6 +230,10 @@ docker build -t espresso .
 ```
 
 Donde dice: espresso, es el nombre que se le dará a la imagen, la bandera `-t` nos permite asignarle un nombre a nuestra imagen, en este caso se puso espresso, pero puede ponerle como guste, solo al momento de correlo ponga el nombre que le asignó al comando docker run que se verá más adelante.
+
+El punto `.` nos indica que construirá la imagen con base al Dockerfile que esté en la posición que se encuentre la terminal, el punto `.` puede ser reemplazado por la ruta donde se encuentre el Dockerfile o por el nombre del archivo Dockerfile si es que lo tiene diferente.
+
+> Le recomendamos dejar el punto `.` para que sea más sencilla la construcción de la imagen de este ejemplo.
 
 Este paso puede tardar hasta una hora dependiendo su conexión a internet o potencia de computadora.
 
