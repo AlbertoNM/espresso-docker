@@ -39,7 +39,7 @@ RUN cd /root && \
 RUN cd /root/q-e-qe-7.2 && \
     ./configure \
         --with-cuda=/opt/nvidia/hpc_sdk \
-        --with-cuda-cc=86 \
+        --with-cuda-cc=$(pgaccelinfo | grep cc | sed 's/[^0-9]//g') \
         --with-cuda-runtime=12.3 \
         --disable-parallel \
         --enable-openmp \

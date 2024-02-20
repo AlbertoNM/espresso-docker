@@ -1,4 +1,4 @@
-# Instalacion de Quantum ESPRESSO en Docker
+# Instalación de Quantum ESPRESSO en Docker
 
 ## Especificaciones
 
@@ -49,7 +49,7 @@ Reemplace NAME por el nombre de la distribución que desee actualizar, en el cas
 Finalmente, debe de poner como default la versión 2 de WSL mediante este comando:
 
 ```Powershell
- wsl --set-default-version 2
+wsl --set-default-version 2
 ```
 
 Esto ayudará a futuras intalaciones de distribuciones linux.
@@ -202,6 +202,8 @@ Tecleé el siguiente comando en la terminal:
 docker build -t espresso .
 ```
 
+Donde dice: espresso, es el nombre que se le dará a la imagen, la bandera `-t` nos permite asignarle un nombre a nuestra imagen, en este caso se puso espresso, pero puede ponerle como guste, solo al momento de correlo ponga el nombre que le asignó al comando docker run que se verá más adelante.
+
 Este paso puede tardar hasta una hora dependiendo su conexión a internet o potencia de computadora.
 
 Al final del proceso debería salir un mensaje como este:
@@ -255,9 +257,11 @@ Para correr la imagen de manera directa sin crear ningún en específico corra e
 docker run --gpus all -it espresso
 ```
 
+Es importante poner `--gpus all` al comando para que la imagen pueda detectar todas las gpus de la computadora. Ahora, la bandera: `-it` nos sirve para poder entrar a la máquina virtual y poder controlar la terminal.
+
 La salida debería ser la siguiente:
 
-```Powershell
+```shell
 ====================
 == NVIDIA HPC SDK ==
 ====================
@@ -273,7 +277,7 @@ https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(Native-GPU-Support)
 root@0c4887e73636:/app/prueba# 
 ```
 
-> NOTA: si sale el mensaje de error: WARNING: The NVIDIA Driver was not detected. GPU functionality will not be available. <br>Escriba ahí mismo `nvidia-smi` y debería salirle información de la GPU, de ser así, ignore el mensaje de advertencia. 
+> NOTA: si sale el mensaje de error: WARNING: The NVIDIA Driver was not detected. GPU functionality will not be available. <br>Escriba `nvidia-smi`, de enter y debería salirle información de la GPU, de ser así, ignore el mensaje de advertencia. 
 
 La salida (en mi caso) es:
 
