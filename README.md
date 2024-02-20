@@ -23,7 +23,7 @@ Primero descargue el instalador de Docker Desktop de la página oficial de docke
 
 https://www.docker.com/products/docker-desktop/
 
-Una vez descargado el instalador ejecútelo y siga los pasos de éste.
+Una vez descargado el instalador ejecútelo y siga los pasos de éste. El instalador le mostrará dos opciones de instalación, deje esos recuadros palomeados y proceda a instalar docker. Al finalizar la instalación le pedirá que reinicie la computadora, reinicie la computadora y cuando inicie otra vez sesión seleccione la configuración recomendada por docker para finalizar la instalación; no es necesario crear una cuenta de docker.
 
 Ahora tendrá que checar si tiene instalado windows subsystem for linux (WSL), puede utilizar el comando `wsl -l -v` en una terminal powershell y le mostrará un listado de ambientes que tiene y su versión, ejemplo:
 
@@ -44,7 +44,7 @@ Si ahora la versión es 1, tendrá que actualizar y definir como versión princi
 wsl --set-version NAME 2
 ```
 
-Reemplace NAME por el nombre de la distribución que desee actualizar, en el caso de arriba el comando `wsl -l -v` muestra un listado de las disribuciones que se tiene, si instaló docker antes de llegar aquí, deberían salir las distribuciones de docker, las cual debe actualizar a WSL 2.
+Reemplace NAME por el nombre de la distribución que desee actualizar, en el caso de arriba el comando `wsl -l -v` muestra un listado de las disribuciones que se tiene, si instaló docker antes de llegar aquí, deberían salir las distribuciones de docker, las cuales debe actualizar a WSL 2.
 
 Finalmente, debe de poner como default la versión 2 de WSL mediante este comando:
 
@@ -158,7 +158,7 @@ sudo usermod -aG docker $USER
 
 Reinicie la terminal.
 
-De manera opcional, puede activar los cambios del grupo corra el siguiente comando:
+De manera opcional, puede activar los cambios del grupo corriendo el siguiente comando:
 
 ```shell
 newgrp docker
