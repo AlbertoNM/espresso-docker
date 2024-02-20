@@ -17,13 +17,17 @@ La imagen que se utiliza como base para construir ésta pertenece a [NVIDIA HPC 
 
 Antes de construir la imagen es necesario que tenga instalado docker en su sistema, si no tiene instalado docker puede seguir estos pasos.
 
-### Docker en Windows
----
+## Docker en Windows
+
+### Descargar Docker Desktop
+
 EL primer paso sería descargar el instalador de Docker Desktop de la página oficial de docker:
 
 https://www.docker.com/products/docker-desktop/
 
 Una vez descargado el instalador ejecútelo y siga los pasos de éste. El instalador le mostrará dos opciones de instalación, deje esos recuadros palomeados y proceda a instalar docker. Al finalizar la instalación le pedirá que reinicie la computadora, reinicie la computadora y cuando inicie otra vez sesión seleccione la configuración recomendada por docker para finalizar la instalación; no es necesario crear una cuenta de docker.
+
+### WSL 2
 
 El segundo paso será checar si tiene instalado windows subsystem for linux (WSL), puede utilizar el comando `wsl -l -v` en una terminal powershell y le mostrará un listado de ambientes que tiene y su versión, ejemplo:
 
@@ -34,7 +38,7 @@ El segundo paso será checar si tiene instalado windows subsystem for linux (WSL
   docker-desktop         Running         2
 ```
 
-En este ejemplo se puede ver que en `VERSION` indica 2, lo que quiere decir que es WSL 2; para docker, es necesario que WSL corra en esta versión. 
+En este ejemplo se puede ver que en `VERSION` indica 2, lo que quiere decir que WSL 2 está instalado correctamente; para docker, es necesario que WSL corra en esta versión; si cuenta con la versión de WSL 2 en las distribuciones de docker, el proceso de instalación termina aquí. 
 
 En caso de no tener instalado WSL solo escriba en una terminal powershell: `wsl --install` y vuelva a probar el comando anterior: `wsl -l -v`.
 
@@ -54,10 +58,12 @@ wsl --set-default-version 2
 
 Esto ayudará a futuras intalaciones de distribuciones linux.
 
+### Referencias
+
 > Para más información puede consultar los siguientes links: <br>https://learn.microsoft.com/es-es/windows/wsl/install <br>https://docs.docker.com/desktop/wsl/
 
-### Docker en Linux
----
+## Docker en Linux
+
 Para instalar docker dentro en ubuntu puede primero depurar contenido que ya se tenga de docker mediante el siguiente comando:
 
 ```shell
