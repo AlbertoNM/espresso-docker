@@ -1,0 +1,18 @@
+
+services:
+  espresso:
+    working_dir: /app
+    volumes:
+      - ./:/app
+    build: .
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    stdin_open: true
+    tty: true

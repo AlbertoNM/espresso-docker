@@ -17,7 +17,6 @@ nosetests.xml
 coverage.xml
 *.cover
 *.log
-.git
 .mypy_cache
 .pytest_cache
 .hypothesis
@@ -31,3 +30,5 @@ coverage.xml
 #! Docker
 
 .dockerignore
+docker-compose.yml
+Dockerfile
